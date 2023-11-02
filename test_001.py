@@ -23,4 +23,4 @@ def test_login(page: Page):
     page.goto("https://opensource-demo.orangehrmlive.com")
     page.get_by_role("button", name="Login").click()
     expect(page.locator("//div[@class='orangehrm-login-slot-wrapper']//div[1]//div[1]//span[1]")).to_have_text("Required")
-    time.sleep(2)
+    time.sleep(1)
