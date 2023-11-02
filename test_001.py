@@ -17,11 +17,16 @@ def test_has_header(page: Page):
 def test_has_credentials(page: Page):
     page.goto("https://opensource-demo.orangehrmlive.com")
     expect(page.locator("//div[@class='orangehrm-login-error']//p[1]")).to_have_text("Username : Admin")
-    expect(page.locator("//div[@class='orangehrm-login-error']//p[2]")).to_have_text("Password : admin1233")
+    expect(page.locator("//div[@class='orangehrm-login-error']//p[2]")).to_have_text("Password : admin123")
 
 
 def test_login(page: Page):
     page.goto("https://opensource-demo.orangehrmlive.com")
     page.get_by_role("button", name="Login").click()
     expect(page.locator("//div[@class='orangehrm-login-slot-wrapper']//div[1]//div[1]//span[1]")).to_have_text("Required")
-    time.sleep(1)
+
+
+def test_fail(page: Page):
+    page.goto("https://opensource-demo.orangehrmlive.com")
+    page.get_by_role("button", name="Login").click()
+    expect(page.locator("//div[@class='orangehrm-login-slot-wrapper']//div[1]//div[1]//span[1]")).to_have_text("not Required")
