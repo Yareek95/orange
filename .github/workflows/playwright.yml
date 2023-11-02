@@ -22,8 +22,13 @@ jobs:
     - name: Install Playwright
       run: |
         python -m pip install --upgrade pip
-        python -m pip install pytest-playwright
+        python -m pip install playwright
 
+    - name: Install pytest-Playwright
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install pytest-playwright
+        
     - name: Install pytest
       run: python -m pip install pytest
 
