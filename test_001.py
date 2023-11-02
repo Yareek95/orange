@@ -3,6 +3,7 @@ import time
 
 from playwright.sync_api import Page, expect
 
+
 def test_has_title(page: Page):
     page.goto("https://opensource-demo.orangehrmlive.com")
     expect(page).to_have_title(re.compile("OrangeHRM"))
@@ -16,7 +17,7 @@ def test_has_header(page: Page):
 def test_has_credentials(page: Page):
     page.goto("https://opensource-demo.orangehrmlive.com")
     expect(page.locator("//div[@class='orangehrm-login-error']//p[1]")).to_have_text("Username : Admin")
-    expect(page.locator("//div[@class='orangehrm-login-error']//p[2]")).to_have_text("Password : admin123")
+    expect(page.locator("//div[@class='orangehrm-login-error']//p[2]")).to_have_text("Password : admin1233")
 
 
 def test_login(page: Page):
